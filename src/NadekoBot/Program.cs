@@ -1,7 +1,10 @@
-﻿namespace NadekoBot
+using NLog;
+
+namespace NadekoBot
 {
     public class Program
     {
+        private Logger _log { get; }
         public static void Main(string[] args) {
             try
             {
@@ -9,7 +12,7 @@
             }
             catch (System.Exception e)
             {
-                System.Console.WriteLine("NadekoBot Crashed with Exception: {0}", e);
+                _log("NadekoBot Crashed with Exception: {0}", e);
             }
         }
     }
